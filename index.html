@@ -41,6 +41,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- custom css -->
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <!-- fontawesome css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- ajax jquery -->
+     <script defer src="./validate.js"></script>
+     <!-- <script type="text/javascript" src="./valid.js"></script> -->
     <!-- //css files -->
 
     <!-- google fonts -->
@@ -100,37 +104,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <ul class="social_section_1info mt-4">
                 <li class="mb-2 facebook">
                   <a
-                    href="https://www.facebook.com/profile.php?id=100008237119496"
+                    href="https://www.facebook.com/profile.php?id=100008237119496" target="blank"
                     ><span class="fa fa-facebook"></span
                   ></a>
-                </li>
-                <li class="mb-2 twitter">
+                  </li>
+                  <li class="mb-2 twitter">
                   <a
-                    href="https://twitter.com/T_h___lb?t=TulvD9JnSrlWgewTTqVhOw&s=09"
+                    href="https://twitter.com/T_h___lb?t=TulvD9JnSrlWgewTTqVhOw&s=09" target="blank"
                     ><span class="fa fa-twitter"></span
                   ></a>
-                </li>
-                <li class="linkedin">
-                  <a href="https://www.linkedin.com/in/abu-thalib-47a908211"
+                  </li>
+                  <li class="linkedin">
+                  <a href="https://www.linkedin.com/in/abu-thalib-47a908211" target="blank"
                     ><span class="fa fa-linkedin"></span
                   ></a>
-                </li>
-                <li class="github">
-                  <a href="https://github.com/Abuthalib"
+                  </li>
+                  <li class="github">
+                  <a href="https://github.com/Abuthalib" target="blank"
                     ><span class="fa fa-github"></span
                   ></a>
-                </li>
-                <li class="telegram">
-                  <a href="https://t.me/T_l13"
+                  </li>
+                  <li class="telegram">
+                  <a href="https://t.me/T_l13" target="blank"
                     ><span class="fa fa-telegram"></span
                   ></a>
-                </li>
-                <li class="instagram">
+                  </li>
+                  <li class="instagram">
                   <a
-                    href="https://www.instagram.com/t_h___lb/?igshid=YmMyMTA2M2Y="
+                    href="https://www.instagram.com/t_h___lb/?igshid=YmMyMTA2M2Y=" target="blank"
                     ><span class="fa fa-instagram"></span
                   ></a>
-                </li>
+                  </li>
               </ul>
               <a href="#about" class="scroll bnr-btn mr-2">Read more </a>
               <a href="#contact" class="scroll bnr-btn1">Contact Me </a>
@@ -163,11 +167,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </p>
               <div class="row mt-sm-5 mt-4 about-right-inner">
                 <div class="col-sm-4 col-6 myphoto-sign text-center">
-                  <img
+                  <!-- <img
                     src="./images/myphoto.jpg"
                     alt=""
                     class="img-fluid rounded-circle"
-                  />
+                  /> -->
                   <!-- <img
                     src="images/signature.png"
                     alt=""
@@ -237,7 +241,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </div>
             </div>
           </div>
-          <h3 class="position">About Me</h3>
+          <h3 class="position"></h3>
         </div>
       </div>
     </section>
@@ -627,9 +631,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-lg-8">
               <form
                 name="contactform"
-                id="contactform"
-                method="post"
-                action="#"
+                id="submit-form"
+                method=""
+                action=""
                 onsubmit="return(validate());"
                 novalidate="novalidate"
               >
@@ -638,38 +642,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <label>Name</label>
                     <input
                       type="text"
+                      onclick=""
                       class="form-control"
                       id="name"
                       placeholder="Enter Name"
                       name="name"
+                      onClick="nameCheck()"
+                      onkeyup="nameCheck()"
                     />
+                    <p id="error-name" style="color: red;"></p>
+                    <p id="error-number"  style="color: red;"></p>
+                <div class="error"></div>
                   </div>
                   <div class="form-group col-md-6">
                     <label>Email</label>
                     <input
                       type="email"
                       class="form-control"
-                      id="email"
+                      id="mail"
                       placeholder="Enter Email"
                       name="email"
+                      onClick="emailCheck()"
+                      onkeyup="emailCheck()"
                     />
+                    <p id="error-mail" style="color: red;"></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label>Phone No.</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="phone"
+                      id="sub"
                       placeholder="Enter Phone no."
-                      name="phone"
+                      name="subject"
+                      onclick="emptyCheckSubject()"
+                      onkeyup="emptyCheckSubject()"
                     />
+                    <p id="error-sub" style="color: red"></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label>Subject</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="subject"
+                      id="subj"
                       placeholder="Enter Subject"
                       name="phone"
                     />
@@ -677,13 +693,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <div class="form-group col-12">
                     <label>Message</label>
                     <textarea
-                      name="issues"
+                      name="messages"
                       class="form-control"
-                      id="iq"
+                      id="messages"
                       placeholder="Enter Your Message Here"
+                      onclick="emptyCheckMessage()" 
+                      onkeyup="emptyCheckMessage()"
                     ></textarea>
+                    <p id="errormessage" style="color: red;"> </p>
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button  onclick="validateForm()" type="submit" class="btn btn-default">Submit</button>
                 </div>
               </form>
             </div>
@@ -699,6 +718,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
       </div>
     </section>
+    <script>
+      $("#submit-form").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbxv0Yf8KgSWUwko9xf9e_t0za-sooOjZaEL7voY6bYnySDgPPZN2u8cnG2kZxnFvOVm/exec",
+              data:$("#submit-form").serialize(),
+              method:"post",
+              success:function (response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
+  
+              }
+          })
+      })
+  </script>
     <!-- //Contact -->
 
     <!-- footer -->
@@ -727,34 +765,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="social_section_1info">
 				<li class="mb-2 facebook">
 					<a
-					  href="https://www.facebook.com/profile.php?id=100008237119496"
+					  href="https://www.facebook.com/profile.php?id=100008237119496" target="blank"
 					  ><span class="fa fa-facebook"></span
 					></a>
 				  </li>
 				  <li class="mb-2 twitter">
 					<a
-					  href="https://twitter.com/T_h___lb?t=TulvD9JnSrlWgewTTqVhOw&s=09"
+					  href="https://twitter.com/T_h___lb?t=TulvD9JnSrlWgewTTqVhOw&s=09" target="blank"
 					  ><span class="fa fa-twitter"></span
 					></a>
 				  </li>
 				  <li class="linkedin">
-					<a href="https://www.linkedin.com/in/abu-thalib-47a908211"
+					<a href="https://www.linkedin.com/in/abu-thalib-47a908211" target="blank"
 					  ><span class="fa fa-linkedin"></span
 					></a>
 				  </li>
 				  <li class="github">
-					<a href="https://github.com/Abuthalib"
+					<a href="https://github.com/Abuthalib" target="blank"
 					  ><span class="fa fa-github"></span
 					></a>
 				  </li>
 				  <li class="telegram">
-					<a href="https://t.me/T_l13"
+					<a href="https://t.me/T_l13" target="blank"
 					  ><span class="fa fa-telegram"></span
 					></a>
 				  </li>
 				  <li class="instagram">
-					<a
-					  href="https://www.instagram.com/t_h___lb/?igshid=YmMyMTA2M2Y="
+					<f
+					  href="https://www.instagram.com/t_h___lb/?igshid=YmMyMTA2M2Y=" target="blank"
 					  ><span class="fa fa-instagram"></span
 					></a>
 				  </li>

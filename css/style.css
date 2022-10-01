@@ -300,13 +300,12 @@ ul.social_section_1info a span.fa {
 }
 h3.position {
     position: absolute;
-    font-size: 60px;
-    font-weight: 800;
+    font-size: 52px;
+    font-weight: 600;
     letter-spacing: 5px;
-    transform: rotate(90deg);
-    right: -2%;
-    top: 30%;
-    color: #333;
+    right: 26%;
+    top: 0%;
+    color: rgb(236, 228, 228);
 }
 .about-right h4.main {
     font-size: 24px;
@@ -315,7 +314,7 @@ h3.position {
     margin: 1em 0;
 }
 .about-right {
-    padding: 3em;
+    padding: 5em;
 }
 .about-right p {
     font-size: 16px;
@@ -549,7 +548,7 @@ p.sub-meta {
 .box9 .icon li a{display:block;width:38px;height:38px;background:#f39c12;font-size:15px;color:#fff;margin-right:5px;transition:all .35s ease 0s;-webkit-transition:all .35s ease 0s}
 .box9 .icon a:hover{background:#fff;color:#f39c12;}
 @media only screen and (max-width:990px){}
-}
+
 p.paragraph {
     color: #888;
     font-size: 16px;
@@ -570,7 +569,7 @@ p.paragraph:after {
 
 /*-- quote --*/
 .quote{
-    background: url(../images/at5.jpg) 0px 0px;
+    background: url(../images/at6.jpg) 0px 0px;
     background-size: cover;
     position: relative;
 }
@@ -910,7 +909,7 @@ a.move-top span{
 }
 @media(max-width:600px) {
 	.quote {
-		background: url(../images/banner.jpg) center;
+		background: url(../images/at5.jpg) center;
 		background-size: cover;
 	}
 }
