@@ -629,14 +629,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="contact-form">
           <div class="row">
             <div class="col-lg-8">
+             
               <form
-                name="contactform"
+                
                 id="submit-form"
                 method=""
-                action=""
-                onsubmit="return(validate());"
-                novalidate="novalidate"
-              >
+              
+                
+               >
+              
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label>Name</label>
@@ -647,8 +648,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       id="name"
                       placeholder="Enter Name"
                       name="name"
+               
                       onClick="nameCheck()"
                       onkeyup="nameCheck()"
+                      required
                     />
                     <p id="error-name" style="color: red;"></p>
                     <p id="error-number"  style="color: red;"></p>
@@ -662,6 +665,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       id="mail"
                       placeholder="Enter Email"
                       name="email"
+                      required
                       onClick="emailCheck()"
                       onkeyup="emailCheck()"
                     />
@@ -677,18 +681,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       name="subject"
                       onclick="emptyCheckSubject()"
                       onkeyup="emptyCheckSubject()"
-                    />
+                      required
+                    >
                     <p id="error-sub" style="color: red"></p>
                   </div>
+                  
                   <div class="form-group col-md-6">
                     <label>Subject</label>
+                    
                     <input
                       type="text"
                       class="form-control"
                       id="subj"
                       placeholder="Enter Subject"
                       name="phone"
-                    />
+                      required
+                    >
+                   
                   </div>
                   <div class="form-group col-12">
                     <label>Message</label>
@@ -699,6 +708,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       placeholder="Enter Your Message Here"
                       onclick="emptyCheckMessage()" 
                       onkeyup="emptyCheckMessage()"
+                      required
                     ></textarea>
                     <p id="errormessage" style="color: red;"> </p>
                   </div>
