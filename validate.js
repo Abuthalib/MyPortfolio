@@ -1,4 +1,8 @@
 var flag = 0;
+function phonenum (inputtxt)
+{
+   
+}
 
 function containsSpecialChars(str) {
    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
@@ -29,9 +33,9 @@ function ValidateEmailSignature(mail) {
 
 function nameCheck() {
    var name = document.getElementById("name").value;
-
-   if (name == "" || name == null || name === " ") {
-      document.getElementById("error-name").innerHTML = "This area should not be blank";
+   name=name.trim()  ;
+   if (name === "" || name === null || name === " ") {
+      document.getElementById("error-name").innerHTML = "Provide a name";
       return false;
    } else {
       if (containsSpecialChars(name)) {
@@ -58,20 +62,34 @@ function nameCheck() {
    }
 }
 
-function emptyCheckSubject() {
-   var sub = document.getElementById("sub").value;
-   if (sub == "" || sub == null) {
-      document.getElementById("error-sub").innerHTML = "This area should not be blank";
-      return false;
-   } else {
-      document.getElementById("error-sub").innerHTML = "";
-      return true;
-   }
-}
+
+
+
+// function emptyCheckSubject() {
+//    var sub = document.getElementById("sub").value;
+//    sub=sub.trim();
+//    if (sub == "" || sub == null) {
+//       document.getElementById("error-sub").innerHTML = "area should not be blank";
+//       return false;
+//    } else {
+//       document.getElementById("error-sub").innerHTML = "";
+      
+//    }
+//    var phnum=/^\d{10}$/;
+//    if(sub.match(phnum))
+// {
+//    return true;
+   
+// }
+//    else{
+//       return false;
+//    }
+// }
 
 function emptyCheckMessage() {
    var msg = document.getElementById("messages").value;
-   if (msg == "" || msg == null) {
+   msg=msg.trim();
+   if (msg === "" || msg === null) {
       document.getElementById("errormessage").innerHTML = "This area should not be blank";
       return false;
    } else {
@@ -82,9 +100,10 @@ function emptyCheckMessage() {
 
 function emailCheck() {
    var mail = document.getElementById("mail").value;
+   mail=mail.trim();
 
    if (mail == "" || mail == null) {
-      document.getElementById("error-mail").innerHTML = "This area should not be blank";
+      document.getElementById("error-mail").innerHTML = "provide proper mail id";
       return false;
    } else {
       if (ValidateEmail(mail)) {
@@ -126,5 +145,6 @@ function check() {
    console.log("emptyCheckMessage = " + emptyCheckMessage());
    console.log("emailCheck = " + emailCheck());
    console.log("validateForm =" + validateForm());
+   console.log("emptyCheckSubj = " + emptyCheckSubj());
    return false;
 }
