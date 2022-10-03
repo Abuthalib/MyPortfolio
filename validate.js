@@ -1,8 +1,4 @@
-var flag = 0;
-function phonenum (inputtxt)
-{
-   
-}
+var flag = 0
 
 function containsSpecialChars(str) {
    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
@@ -130,11 +126,11 @@ document.getElementById("submit-form").addEventListener(
 );
 
 function validateForm() {
-   if (!nameCheck() || !emptyCheckSubject() || !emptyCheckMessage() || !emailCheck() || flag === 1) {
-      document.getElementById("submitError").innerHTML = "please complete all Required Fields";
+   if (!nameCheck()  || !emptyCheckMessage() || !emailCheck() || flag === 1) {
+      document.getElementById("btn").innerHTML = "please complete all Required Fields";
       return false;
    } else {
-      document.getElementById("submitError").innerHTML = "";
+      document.getElementById("btn").innerHTML = "";
       return true;
    }
 }
