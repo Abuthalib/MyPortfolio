@@ -82,17 +82,6 @@ function nameCheck() {
 //    }
 // }
 
-function emptyCheckMessage() {
-   var msg = document.getElementById("messages").value;
-   msg=msg.trim();
-   if (msg === "" || msg === null) {
-      document.getElementById("errormessage").innerHTML = "This area should not be blank";
-      return false;
-   } else {
-      document.getElementById("errormessage").innerHTML = "";
-      return true;
-   }
-}
 
 function emailCheck() {
    var mail = document.getElementById("mail").value;
@@ -116,6 +105,19 @@ function emailCheck() {
       }
    }
 }
+function emptyCheckMessage() {
+   var msg = document.getElementById("messages").value;
+   msg=msg.trim();
+   if (msg === "" || msg === null) {
+      document.getElementById("errormessage").innerHTML = "This area should not be blank";
+      return false;
+   } else {
+      document.getElementById("errormessage").innerHTML = "";
+      return true;
+   }
+}
+
+
 
 document.getElementById("submit-form").addEventListener(
    "submit",
@@ -130,7 +132,7 @@ function validateForm() {
       document.getElementById("btn").innerHTML = "please complete all Required Fields";
       return false;
    } else {
-      document.getElementById("btn").innerHTML = "";
+      document.getElementById("btn").innerHTML = "submit";
       return true;
    }
 }
